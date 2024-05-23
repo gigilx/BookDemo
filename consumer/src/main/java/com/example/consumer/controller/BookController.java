@@ -4,6 +4,7 @@ import com.example.api.pojo.Book;
 import com.example.api.pojo.ResultBook;
 import com.example.api.service.BookService;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class BookController {
 
-    @DubboReference
+    @Reference
     private BookService bookService;
 
     @PostMapping("add")

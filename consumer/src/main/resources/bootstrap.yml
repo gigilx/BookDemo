@@ -18,7 +18,6 @@ dubbo:
     password: nacos
   protocol:
     name: dubbo
-    port: -1
   scan:
     base-packages: com.example.consumer.controller
   consumer:

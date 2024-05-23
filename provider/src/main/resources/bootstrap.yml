@@ -16,12 +16,10 @@ spring:
 dubbo: # dubbo配置
   application:
     name: provider-server # dubbo服务名称
+  scan:
+    base-packages: com.example.provider.serviceImpl
   protocol:
     port: 20880 # dubbo服务端口
     name: dubbo # dubbo服务协议名称
   registry: # dubbo使用的注册中心
-    address: nacos://127.0.0.1:8848 # dubbo注册中心地址
-  monitor:
-    protocol: registry
-  scan:
-    base-packages: com.example.provider.serviceImpl
+    address: nacos://169.254.12.81:8848 # dubbo注册中心地址

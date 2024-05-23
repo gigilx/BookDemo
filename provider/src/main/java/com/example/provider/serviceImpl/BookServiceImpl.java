@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Slf4j
-@DubboService
+@Service
 @Component
 public class BookServiceImpl implements BookService {
 
