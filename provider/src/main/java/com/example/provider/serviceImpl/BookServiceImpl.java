@@ -1,15 +1,14 @@
 package com.example.provider.serviceImpl;
 
 import com.example.api.common.StatusCode;
-import com.example.api.service.BookService;
-import com.example.provider.mapper.BookMapper;
 import com.example.api.pojo.Book;
 import com.example.api.pojo.ResultBook;
+import com.example.api.service.BookService;
+import com.example.provider.mapper.BookMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -97,5 +96,14 @@ public class BookServiceImpl implements BookService {
             e.printStackTrace();
             return new ResultBook(StatusCode.FAIL);
         }
+    }
+
+    @Override
+    public ResultBook sayHello() {
+        Book book = new Book();
+        book.setContent("hello");
+        ResultBook result = new ResultBook(StatusCode.SUCCESS);
+        result.setBook(book);
+        return result;
     }
 }

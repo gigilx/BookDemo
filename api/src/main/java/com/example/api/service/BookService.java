@@ -9,4 +9,5 @@ public interface BookService {
     ResultBook  findByName(String name);
     ResultBook  findByAuthor(String author);
     ResultBook update(Book book);
+    ResultBook sayHello();
 }
