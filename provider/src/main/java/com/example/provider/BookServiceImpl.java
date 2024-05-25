@@ -99,4 +99,9 @@ public class BookServiceImpl implements BookService {
             return new ResultBook(StatusCode.FAIL);
         }
     }
+
+    @Override
+    public String sayHello() {
+        return "hello";
+    }
 }
