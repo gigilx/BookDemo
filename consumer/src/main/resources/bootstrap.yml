@@ -1,7 +1,10 @@
 server:
   port: 8081
 
+
 spring:
+  application:
+    name: consumer-server # 项目名称
   cloud:
     nacos:
       config:
@@ -9,16 +12,18 @@ spring:
 dubbo:
   application:
     name: consumer-service
+    version: 1.0.0
     qos-enable: true
     qos-port: 33333
     qos-accept-foreign-ip: false
   registry:
-    address: nacos://169.254.12.81:8848
+    address: nacos://127.0.0.1:8848
     username: nacos
     password: nacos
   protocol:
     name: dubbo
+    port: 20881 # dubbo服务端口
   scan:
     base-packages: com.example.consumer.controller
   consumer:
-    check: false
+    group: demogroup

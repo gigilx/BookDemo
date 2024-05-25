@@ -1,4 +1,4 @@
-package com.example.provider.serviceImpl;
+package com.example.provider;
 
 import com.example.api.common.StatusCode;
 import com.example.api.service.BookService;
@@ -11,14 +11,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
-@Slf4j
-@Service
 @Component
+@DubboService
+@Slf4j
 public class BookServiceImpl implements BookService {
 
-    @Autowired
+    @Resource
     private BookMapper bookMapper;
 
     @Override

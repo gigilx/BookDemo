@@ -7,6 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @EnableDubbo
+@EnableDiscoveryClient
 @SpringBootApplication(scanBasePackages = "com.example")
 public class ConsumerApplication {
 
