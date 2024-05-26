@@ -12,9 +12,9 @@ public interface BookMapper {
     int addBook(Book book);
 
 
-    //删除
-    @Delete("delete from book  where id = #{id}")
-    int delete(Long id);
+    //根据书名删除
+    @Delete("delete from book  where name = #{name}")
+    int delete(String name);
 
     //根据书名查询
     @Select("select * from book where name = #{name}")

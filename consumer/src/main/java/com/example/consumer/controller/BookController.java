@@ -21,9 +21,9 @@ public class BookController {
         return bookService.addBook(book);
     }
 
-    @GetMapping("delete/{id}")
-    public ResultBook delete(@PathVariable("id")Long id){
-        return bookService.delete(id);
+    @GetMapping("delete/{name}")
+    public ResultBook delete(@PathVariable("name")String name){
+        return bookService.delete(name);
     }
 
     @GetMapping("query/by-name")
@@ -41,4 +41,13 @@ public class BookController {
         return bookService.update(book);
     }
 
+//    @PostMapping("addByRedis")
+//    public ResultBook addBookRedis(@RequestBody Book book) {
+//        ResultBook res = bookService.addBookRedis(book);
+//        return  res;
+//    }
+//    @GetMapping("query/by-name-redis")
+//    public ResultBook findByNameRedis(@RequestParam("name")String name) {
+//        return bookService.findByNameRedis(name);
+//    }
 }
