@@ -16,28 +16,33 @@ public class BookController {
     @DubboReference(check = false)
     private BookService bookService;
 
+    @GetMapping("hello")
+    public String add() {
+        return bookService.sayHello();
+    }
+
     @PostMapping("add")
-    public ResultBook add(@RequestBody Book book){
+    public ResultBook add(@RequestBody Book book) {
         return bookService.addBook(book);
     }
 
     @GetMapping("delete/{id}")
-    public ResultBook delete(@PathVariable("id")Long id){
+    public ResultBook delete(@PathVariable("id") Long id) {
         return bookService.delete(id);
     }
 
     @GetMapping("query/by-name")
-    public ResultBook queryByName(@RequestParam("name")String name){
+    public ResultBook queryByName(@RequestParam("name") String name) {
         return bookService.findByName(name);
     }
 
     @GetMapping("query/by-author")
-    public ResultBook queryByAuthor(@RequestParam("author")String author){
+    public ResultBook queryByAuthor(@RequestParam("author") String author) {
         return bookService.findByAuthor(author);
     }
 
     @PostMapping("update")
-    public ResultBook update(@RequestBody Book book){
+    public ResultBook update(@RequestBody Book book) {
         return bookService.update(book);
     }
 
